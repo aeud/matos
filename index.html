@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thanks to the material</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+        html, body, .container, .valign-wrapper {
+            height: 100%;
+        }
+        .valign {
+            width: 100%;
+        }
+        .hand {
+            display: none;
+            text-align: center;
+            width: 100%;
+            font-size: 400px;
+        }
+        .hand.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="valign-wrapper">
+            <div class="valign">
+                <div class="hand hand0 active"><i class="fa fa-hand-paper-o"></i></div>
+                <div class="hand hand1"><i class="fa fa-thumbs-o-up"></i></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+    <script>
+    (function(){
+        var _i = 0; 
+        window.setInterval(function(){
+            $('.hand.active').removeClass('active');
+            $('.hand.hand'+_i).addClass('active');
+            _i = ++_i % 2;
+        }, 400)
+    })()
+    </script>
+</body>
+</html>
